@@ -7,7 +7,6 @@
 //
 #import "NetworkController.h"
 #import "WeatherController.h"
-#import "Weather.h"
 #import <AFNetworking/AFNetworking.h>
 
 @implementation WeatherController
@@ -21,20 +20,16 @@
     return sharedInstance;
 }
 
--(void)getWeatherWithName:(NSString *)name completion:(void(^)(NSArray * weather))completion {
+-(void)getWeatherWithName:(NSString *)name completion:(void(^)(Weather *weather))completion {
     
-    NSString *path = [NSString stringWithFormat:@"name/%@", name];
+    NSString *path = [NSString stringWithFormat:@"weather?q=%@", name];
     
     [[NetworkController api] GET:path parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-        NSArray *responseWeathers = responseObject;
-        NSMutableArray *weathers = [NSMutableArray array];
-        for (NSDictionary *dictionary in responseWeathers) {
-            Weather *weather = [[Weather alloc] initWithDictionary:dictionary];
-            [weathers addObject:weather];
-        }
-        completion(weathers);
+        NSDictionary *responseWeathers = responseObject;
+        Weather *weather = [[Weather alloc] initWithDictionary:responseWeathers];
+        completion(weather);
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        NSLog(@"eror getting weather %@", error);
+        NSLog(@"error getting weather %@", error);
         completion(nil);
     }];
 

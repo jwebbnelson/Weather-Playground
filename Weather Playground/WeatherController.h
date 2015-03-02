@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Weather.h"
 
 @interface WeatherController : NSObject
 
 + (instancetype)sharedInstance;
 
+-(void)getWeatherWithName:(NSString *)name completion:(void(^)(Weather * weather))completion;
 
 @end
