@@ -3,6 +3,8 @@
 
 target 'Weather Playground' do
 
+pod 'AFNetworking', '~> 2.3.1'
+
 end
 
 target 'Weather PlaygroundTests' do
