@@ -39,10 +39,9 @@
         self.descriptionLabel.text = weather.weatherDescription;
          self.tempLabel.text = [NSString stringWithFormat:@"%.1f C", [self celsiusFromKelvin:weather.weatherTemp]];
         
-        NSString *imageString = [NSString stringWithFormat:@"http://openweathermap.org/img/w/%@.png", weather.weatherIcon];
-        NSURL *imageURL = [NSURL URLWithString:imageString];
-        [self.imageView setImageWithURL:imageURL];
-        
+         NSString *pictureString = weather.weatherMain;
+         UIImage *image = [UIImage imageNamed:pictureString];
+         [self.imageView setImage:image];
     }];
     
 }

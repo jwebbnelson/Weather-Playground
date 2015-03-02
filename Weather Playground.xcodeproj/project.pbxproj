@@ -93,6 +93,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1281F6021AA5268A000AC4C5 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				1281F5FF1AA50B1B000AC4C5 /* Weather.h */,
+				1281F6001AA50B1B000AC4C5 /* Weather.m */,
+				1281F5FC1AA50B0C000AC4C5 /* WeatherController.h */,
+				1281F5FD1AA50B0C000AC4C5 /* WeatherController.m */,
+			);
+			name = Weather;
+			sourceTree = "<group>";
+		};
 		7167C67A1950376400FD8F55 = {
 			isa = PBXGroup;
 			children = (
@@ -135,10 +146,7 @@
 				7167C69C1950376400FD8F55 /* WPViewController.m */,
 				1281F5F91AA50792000AC4C5 /* NetworkController.h */,
 				1281F5FA1AA50792000AC4C5 /* NetworkController.m */,
-				1281F5FC1AA50B0C000AC4C5 /* WeatherController.h */,
-				1281F5FD1AA50B0C000AC4C5 /* WeatherController.m */,
-				1281F5FF1AA50B1B000AC4C5 /* Weather.h */,
-				1281F6001AA50B1B000AC4C5 /* Weather.m */,
+				1281F6021AA5268A000AC4C5 /* Weather */,
 				7167C69E1950376400FD8F55 /* Images.xcassets */,
 				7167C68D1950376400FD8F55 /* Supporting Files */,
 			);
